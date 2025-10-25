@@ -77,27 +77,27 @@ export const SchoolUpdate = () => {
       <Row className="justify-content-center">
         <Col md="8">
           <h2 id="dailyMathApp.school.home.createOrEditLabel" data-cy="SchoolCreateUpdateHeading">
-            创建或编辑 School
+            创建或编辑学校
           </h2>
         </Col>
       </Row>
       <Row className="justify-content-center">
         <Col md="8">
           {loading ? (
-            <p>Loading...</p>
+            <p>加载中...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
               {!isNew ? <ValidatedField name="id" required readOnly id="school-id" label="ID" validate={{ required: true }} /> : null}
-              <ValidatedField label="Name" id="school-name" name="name" data-cy="name" type="text" />
+              <ValidatedField label="名称" id="school-name" name="name" data-cy="name" type="text" />
               <ValidatedField
-                label="Registered Students Count"
+                label="注册学生数"
                 id="school-registeredStudentsCount"
                 name="registeredStudentsCount"
                 data-cy="registeredStudentsCount"
                 type="text"
               />
-              <ValidatedField label="Pinyin" id="school-pinyin" name="pinyin" data-cy="pinyin" type="text" />
-              <ValidatedField id="school-distinct" name="distinct" data-cy="distinct" label="Distinct" type="select">
+              <ValidatedField label="拼音" id="school-pinyin" name="pinyin" data-cy="pinyin" type="text" />
+              <ValidatedField id="school-distinct" name="distinct" data-cy="distinct" label="区域" type="select">
                 <option value="" key="0" />
                 {distincts
                   ? distincts.map(otherEntity => (

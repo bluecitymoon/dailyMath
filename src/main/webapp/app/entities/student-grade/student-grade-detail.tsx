@@ -21,22 +21,22 @@ export const StudentGradeDetail = () => {
   return (
     <Row>
       <Col md="8">
-        <h2 data-cy="studentGradeDetailsHeading">Student Grade</h2>
+        <h2 data-cy="studentGradeDetailsHeading">学生年级详情</h2>
         <dl className="jh-entity-details">
           <dt>
             <span id="id">ID</span>
           </dt>
           <dd>{studentGradeEntity.id}</dd>
           <dt>
-            <span id="name">Name</span>
+            <span id="name">名称</span>
           </dt>
           <dd>{studentGradeEntity.name}</dd>
           <dt>
-            <span id="index">Index</span>
+            <span id="index">索引</span>
           </dt>
           <dd>{studentGradeEntity.index}</dd>
           <dt>
-            <span id="term">Term</span>
+            <span id="term">学期</span>
           </dt>
           <dd>{studentGradeEntity.term}</dd>
         </dl>

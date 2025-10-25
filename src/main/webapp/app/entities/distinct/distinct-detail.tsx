@@ -21,18 +21,18 @@ export const DistinctDetail = () => {
   return (
     <Row>
       <Col md="8">
-        <h2 data-cy="distinctDetailsHeading">Distinct</h2>
+        <h2 data-cy="distinctDetailsHeading">区域详情</h2>
         <dl className="jh-entity-details">
           <dt>
             <span id="id">ID</span>
           </dt>
           <dd>{distinctEntity.id}</dd>
           <dt>
-            <span id="name">Name</span>
+            <span id="name">名称</span>
           </dt>
           <dd>{distinctEntity.name}</dd>
           <dt>
-            <span id="pinyin">Pinyin</span>
+            <span id="pinyin">拼音</span>
           </dt>
           <dd>{distinctEntity.pinyin}</dd>
         </dl>

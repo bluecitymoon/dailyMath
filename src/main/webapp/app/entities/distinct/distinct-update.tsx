@@ -68,19 +68,19 @@ export const DistinctUpdate = () => {
       <Row className="justify-content-center">
         <Col md="8">
           <h2 id="dailyMathApp.distinct.home.createOrEditLabel" data-cy="DistinctCreateUpdateHeading">
-            创建或编辑 Distinct
+            创建或编辑区域
           </h2>
         </Col>
       </Row>
       <Row className="justify-content-center">
         <Col md="8">
           {loading ? (
-            <p>Loading...</p>
+            <p>加载中...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
               {!isNew ? <ValidatedField name="id" required readOnly id="distinct-id" label="ID" validate={{ required: true }} /> : null}
-              <ValidatedField label="Name" id="distinct-name" name="name" data-cy="name" type="text" />
-              <ValidatedField label="Pinyin" id="distinct-pinyin" name="pinyin" data-cy="pinyin" type="text" />
+              <ValidatedField label="名称" id="distinct-name" name="name" data-cy="name" type="text" />
+              <ValidatedField label="拼音" id="distinct-pinyin" name="pinyin" data-cy="pinyin" type="text" />
               <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/distinct" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;

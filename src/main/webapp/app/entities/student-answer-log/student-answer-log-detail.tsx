@@ -22,30 +22,30 @@ export const StudentAnswerLogDetail = () => {
   return (
     <Row>
       <Col md="8">
-        <h2 data-cy="studentAnswerLogDetailsHeading">Student Answer Log</h2>
+        <h2 data-cy="studentAnswerLogDetailsHeading">学生答题记录详情</h2>
         <dl className="jh-entity-details">
           <dt>
             <span id="id">ID</span>
           </dt>
           <dd>{studentAnswerLogEntity.id}</dd>
           <dt>
-            <span id="studentId">Student Id</span>
+            <span id="studentId">学生ID</span>
           </dt>
           <dd>{studentAnswerLogEntity.studentId}</dd>
           <dt>
-            <span id="questionId">Question Id</span>
+            <span id="questionId">题目ID</span>
           </dt>
           <dd>{studentAnswerLogEntity.questionId}</dd>
           <dt>
-            <span id="answer">Answer</span>
+            <span id="answer">答案</span>
           </dt>
           <dd>{studentAnswerLogEntity.answer}</dd>
           <dt>
-            <span id="correct">Correct</span>
+            <span id="correct">是否正确</span>
           </dt>
           <dd>{studentAnswerLogEntity.correct}</dd>
           <dt>
-            <span id="createDate">Create Date</span>
+            <span id="createDate">创建日期</span>
           </dt>
           <dd>
             {studentAnswerLogEntity.createDate ? (
@@ -53,7 +53,7 @@ export const StudentAnswerLogDetail = () => {
             ) : null}
           </dd>
           <dt>
-            <span id="winPoints">Win Points</span>
+            <span id="winPoints">获得积分</span>
           </dt>
           <dd>{studentAnswerLogEntity.winPoints}</dd>
         </dl>

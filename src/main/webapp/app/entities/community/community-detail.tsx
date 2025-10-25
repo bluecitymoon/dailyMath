@@ -22,7 +22,7 @@ export const CommunityDetail = () => {
   return (
     <Row>
       <Col md="8">
-        <h2 data-cy="communityDetailsHeading">Community</h2>
+        <h2 data-cy="communityDetailsHeading">小区详情</h2>
         <dl className="jh-entity-details">
           <dt>
             <span id="id">ID</span>

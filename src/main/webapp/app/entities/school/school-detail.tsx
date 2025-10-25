@@ -21,25 +21,25 @@ export const SchoolDetail = () => {
   return (
     <Row>
       <Col md="8">
-        <h2 data-cy="schoolDetailsHeading">School</h2>
+        <h2 data-cy="schoolDetailsHeading">学校详情</h2>
         <dl className="jh-entity-details">
           <dt>
             <span id="id">ID</span>
           </dt>
           <dd>{schoolEntity.id}</dd>
           <dt>
-            <span id="name">Name</span>
+            <span id="name">名称</span>
           </dt>
           <dd>{schoolEntity.name}</dd>
           <dt>
-            <span id="registeredStudentsCount">Registered Students Count</span>
+            <span id="registeredStudentsCount">注册学生数</span>
           </dt>
           <dd>{schoolEntity.registeredStudentsCount}</dd>
           <dt>
-            <span id="pinyin">Pinyin</span>
+            <span id="pinyin">拼音</span>
           </dt>
           <dd>{schoolEntity.pinyin}</dd>
-          <dt>Distinct</dt>
+          <dt>区域</dt>
           <dd>{schoolEntity.distinct ? schoolEntity.distinct.name : ''}</dd>
         </dl>
         <Button tag={Link} to="/school" replace color="info" data-cy="entityDetailsBackButton">

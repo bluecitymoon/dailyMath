@@ -93,21 +93,21 @@ export const StudentUpdate = () => {
       <Row className="justify-content-center">
         <Col md="8">
           <h2 id="dailyMathApp.student.home.createOrEditLabel" data-cy="StudentCreateUpdateHeading">
-            创建或编辑 Student
+            创建或编辑学生
           </h2>
         </Col>
       </Row>
       <Row className="justify-content-center">
         <Col md="8">
           {loading ? (
-            <p>Loading...</p>
+            <p>加载中...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
               {!isNew ? <ValidatedField name="id" required readOnly id="student-id" label="ID" validate={{ required: true }} /> : null}
-              <ValidatedField label="Name" id="student-name" name="name" data-cy="name" type="text" />
-              <ValidatedField label="Gender" id="student-gender" name="gender" data-cy="gender" type="text" />
+              <ValidatedField label="姓名" id="student-name" name="name" data-cy="name" type="text" />
+              <ValidatedField label="性别" id="student-gender" name="gender" data-cy="gender" type="text" />
               <ValidatedField
-                label="Birthday"
+                label="生日"
                 id="student-birthday"
                 name="birthday"
                 data-cy="birthday"
@@ -115,7 +115,7 @@ export const StudentUpdate = () => {
                 placeholder="YYYY-MM-DD HH:mm"
               />
               <ValidatedField
-                label="Register Date"
+                label="注册日期"
                 id="student-registerDate"
                 name="registerDate"
                 data-cy="registerDate"
@@ -123,7 +123,7 @@ export const StudentUpdate = () => {
                 placeholder="YYYY-MM-DD HH:mm"
               />
               <ValidatedField
-                label="Update Date"
+                label="更新日期"
                 id="student-updateDate"
                 name="updateDate"
                 data-cy="updateDate"
@@ -131,16 +131,16 @@ export const StudentUpdate = () => {
                 placeholder="YYYY-MM-DD HH:mm"
               />
               <ValidatedField
-                label="Latest Contract End Date"
+                label="最新合同结束日期"
                 id="student-latestContractEndDate"
                 name="latestContractEndDate"
                 data-cy="latestContractEndDate"
                 type="datetime-local"
                 placeholder="YYYY-MM-DD HH:mm"
               />
-              <ValidatedField label="Contact Number" id="student-contactNumber" name="contactNumber" data-cy="contactNumber" type="text" />
-              <ValidatedField label="Parents Name" id="student-parentsName" name="parentsName" data-cy="parentsName" type="text" />
-              <ValidatedField id="student-school" name="school" data-cy="school" label="School" type="select">
+              <ValidatedField label="联系电话" id="student-contactNumber" name="contactNumber" data-cy="contactNumber" type="text" />
+              <ValidatedField label="家长姓名" id="student-parentsName" name="parentsName" data-cy="parentsName" type="text" />
+              <ValidatedField id="student-school" name="school" data-cy="school" label="学校" type="select">
                 <option value="" key="0" />
                 {schools
                   ? schools.map(otherEntity => (
@@ -150,7 +150,7 @@ export const StudentUpdate = () => {
                     ))
                   : null}
               </ValidatedField>
-              <ValidatedField id="student-community" name="community" data-cy="community" label="Community" type="select">
+              <ValidatedField id="student-community" name="community" data-cy="community" label="小区" type="select">
                 <option value="" key="0" />
                 {communities
                   ? communities.map(otherEntity => (

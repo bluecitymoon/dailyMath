@@ -88,36 +88,36 @@ export const CommunityUpdate = () => {
       <Row className="justify-content-center">
         <Col md="8">
           <h2 id="dailyMathApp.community.home.createOrEditLabel" data-cy="CommunityCreateUpdateHeading">
-            创建或编辑 Community
+            创建或编辑小区
           </h2>
         </Col>
       </Row>
       <Row className="justify-content-center">
         <Col md="8">
           {loading ? (
-            <p>Loading...</p>
+            <p>加载中...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
               {!isNew ? <ValidatedField name="id" required readOnly id="community-id" label="ID" validate={{ required: true }} /> : null}
-              <ValidatedField label="Name" id="community-name" name="name" data-cy="name" type="text" />
-              <ValidatedField label="Lat" id="community-lat" name="lat" data-cy="lat" type="text" />
-              <ValidatedField label="Lon" id="community-lon" name="lon" data-cy="lon" type="text" />
+              <ValidatedField label="名称" id="community-name" name="name" data-cy="name" type="text" />
+              <ValidatedField label="纬度" id="community-lat" name="lat" data-cy="lat" type="text" />
+              <ValidatedField label="经度" id="community-lon" name="lon" data-cy="lon" type="text" />
               <ValidatedField
-                label="Students Count"
+                label="学生数"
                 id="community-studentsCount"
                 name="studentsCount"
                 data-cy="studentsCount"
                 type="text"
               />
               <ValidatedField
-                label="Create Date"
+                label="创建日期"
                 id="community-createDate"
                 name="createDate"
                 data-cy="createDate"
                 type="datetime-local"
                 placeholder="YYYY-MM-DD HH:mm"
               />
-              <ValidatedField id="community-distinct" name="distinct" data-cy="distinct" label="Distinct" type="select">
+              <ValidatedField id="community-distinct" name="distinct" data-cy="distinct" label="区域" type="select">
                 <option value="" key="0" />
                 {distincts
                   ? distincts.map(otherEntity => (

@@ -351,7 +351,7 @@ export const QuestionUpdate = () => {
       <Row className="justify-content-center">
         <Col md="8">
           {loading ? (
-            <p>Loading...</p>
+            <p>加载中...</p>
           ) : (
             <ValidatedForm key={isNew ? 'create' : questionEntity.id} defaultValues={defaultValues()} onSubmit={saveEntity}>
               {!isNew ? <ValidatedField name="id" required readOnly id="question-id" label="ID" validate={{ required: true }} /> : null}
