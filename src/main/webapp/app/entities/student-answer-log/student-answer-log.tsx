@@ -11,6 +11,7 @@ import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntities } from './student-answer-log.reducer';
 import StudentDetailModal from '../student/student-detail-modal';
+import QuestionDetailModal from '../question/question-detail-modal';
 
 export const StudentAnswerLog = () => {
   const dispatch = useAppDispatch();
@@ -25,6 +26,8 @@ export const StudentAnswerLog = () => {
   // Modal state
   const [isStudentModalOpen, setIsStudentModalOpen] = useState(false);
   const [selectedStudentId, setSelectedStudentId] = useState<number | null>(null);
+  const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false);
+  const [selectedQuestionId, setSelectedQuestionId] = useState<number | null>(null);
 
   const studentAnswerLogList = useAppSelector(state => state.studentAnswerLog.entities);
   const loading = useAppSelector(state => state.studentAnswerLog.loading);
@@ -97,6 +100,18 @@ export const StudentAnswerLog = () => {
     }
   };
 
+  const handleQuestionClick = (questionId: number) => {
+    setSelectedQuestionId(questionId);
+    setIsQuestionModalOpen(true);
+  };
+
+  const toggleQuestionModal = () => {
+    setIsQuestionModalOpen(!isQuestionModalOpen);
+    if (isQuestionModalOpen) {
+      setSelectedQuestionId(null);
+    }
+  };
+
   const getSortIconByFieldName = (fieldName: string) => {
     const sortFieldName = paginationState.sort;
     const order = paginationState.order;
@@ -165,7 +180,18 @@ export const StudentAnswerLog = () => {
                       {studentAnswerLog.studentId}
                     </Button>
                   </td>
-                  <td>{studentAnswerLog.questionId}</td>
+                  <td>
+                    <Button
+                      color="link"
+                      size="sm"
+                      onClick={() => handleQuestionClick(studentAnswerLog.questionId)}
+                      className="p-0 text-decoration-none"
+                      style={{ color: '#007bff', cursor: 'pointer' }}
+                    >
+                      <FontAwesomeIcon icon="question" className="me-1" />
+                      {studentAnswerLog.questionId}
+                    </Button>
+                  </td>
                   <td>{studentAnswerLog.answer}</td>
                   <td>{studentAnswerLog.correct}</td>
                   <td>
@@ -216,6 +242,9 @@ export const StudentAnswerLog = () => {
 
       {/* Student Detail Modal */}
       <StudentDetailModal isOpen={isStudentModalOpen} toggle={toggleStudentModal} studentId={selectedStudentId} />
+
+      {/* Question Detail Modal */}
+      <QuestionDetailModal isOpen={isQuestionModalOpen} toggle={toggleQuestionModal} questionId={selectedQuestionId} />
     </div>
   );
 };
