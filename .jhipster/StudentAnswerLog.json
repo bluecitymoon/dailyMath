@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20251013015210"
+  },
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "studentId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "questionId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "answer",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "correct",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "createDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "winPoints",
+      "fieldType": "Double"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "StudentAnswerLog",
+  "pagination": "pagination",
+  "readOnly": true,
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

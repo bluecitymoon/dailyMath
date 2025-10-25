@@ -1,0 +1,27 @@
+{
+  "annotations": {
+    "changelogDate": "20250830092550"
+  },
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "index",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "term",
+      "fieldType": "Integer"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "StudentGrade",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

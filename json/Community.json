@@ -1,0 +1,44 @@
+{
+  "annotations": {
+    "changelogDate": "20250910023959"
+  },
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lat",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "lon",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "studentsCount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "createDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Community",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "distinct",
+      "otherEntityRelationshipName": "communities",
+      "relationshipName": "distinct",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="floatType" value="float" dbms="mysql"/>
+    <property name="clobType" value="clob" dbms="mysql"/>
+    <property name="blobType" value="longblob" dbms="mysql"/>
+    <property name="uuidType" value="varchar(36)" dbms="mysql"/>
+    <property name="datetimeType" value="datetime(6)" dbms="mysql"/>
+    <property name="timeType" value="time(6)" dbms="mysql"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250830062224_added_entity_QuestionCategory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250830092550_added_entity_StudentGrade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250830111436_added_entity_QuestionType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250831035411_added_entity_QuestionOption.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250831040235_added_entity_Question.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog//20250909131000_add_answer_to_question.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250910014101_added_entity_Distinct.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250910023959_added_entity_Community.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250910025218_added_entity_School.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250910104449_added_entity_Student.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250110000000_add_level_to_question.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250916000000_modify_level_to_double.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250916000001_add_is_answer_to_question_option.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250921010705_added_entity_QuestionBaseGroup.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250921015547_added_entity_QuestionSectionGroup.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250924000000_add_display_order_to_question_section_group.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20251013015210_added_entity_StudentAnswerLog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20251014000000_add_wechat_fields_to_student.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20250831035411_added_entity_constraints_QuestionOption.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250831040235_added_entity_constraints_Question.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250910023959_added_entity_constraints_Community.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250910025218_added_entity_constraints_School.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250910104449_added_entity_constraints_Student.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250921015547_added_entity_constraints_QuestionSectionGroup.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
+</databaseChangeLog>

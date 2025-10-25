@@ -1,0 +1,95 @@
+/* ==========================================================================
+Main page styles
+========================================================================== */
+.hipster {
+  display: inline-block;
+  width: 100%;
+  height: 497px;
+  background: url('/content/images/jhipster_family_member_3.svg') no-repeat center top;
+  background-size: contain;
+}
+
+/* Home page styles */
+.home-container {
+  padding: 20px 0;
+}
+
+.welcome-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.menu-item-card {
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #007bff;
+}
+
+.menu-item-icon {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item-icon svg {
+  color: #007bff;
+  transition: color 0.3s ease;
+  width: 60px !important;
+  height: 60px !important;
+}
+
+.fa-60px {
+  font-size: 60px !important;
+}
+
+.menu-item-card:hover .menu-item-icon svg {
+  color: #0056b3;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.btn-primary {
+  border-radius: 20px;
+  padding: 0.375rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.card-header {
+  border-bottom: 2px solid #e9ecef;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+}
+
+.card-header .card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #495057;
+}
+
+.card-header svg {
+  font-size: 1.2rem;
+}
