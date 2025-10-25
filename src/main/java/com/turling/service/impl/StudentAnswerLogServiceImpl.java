@@ -4,6 +4,7 @@ import com.turling.domain.StudentAnswerLog;
 import com.turling.repository.StudentAnswerLogRepository;
 import com.turling.service.StudentAnswerLogService;
 import com.turling.service.dto.StudentAnswerLogDTO;
+import com.turling.service.dto.StudentAnswerLogResponseDTO;
 import com.turling.service.mapper.StudentAnswerLogMapper;
 import java.util.Optional;
 import org.slf4j.Logger;
@@ -74,5 +75,38 @@ public class StudentAnswerLogServiceImpl implements StudentAnswerLogService {
     public void delete(Long id) {
         LOG.debug("Request to delete StudentAnswerLog : {}", id);
         studentAnswerLogRepository.deleteById(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public StudentAnswerLogResponseDTO findByStudentIdAndQuestionId(Long studentId, Long questionId) {
+        LOG.debug("Request to get StudentAnswerLog by studentId: {} and questionId: {}", studentId, questionId);
+        
+        Optional<StudentAnswerLog> answerLog = studentAnswerLogRepository.findByStudentIdAndQuestionId(studentId, questionId);
+        
+        if (answerLog.isPresent()) {
+            StudentAnswerLog log = answerLog.get();
+            return new StudentAnswerLogResponseDTO(
+                log.getId(),
+                log.getStudentId(),
+                log.getQuestionId(),
+                log.getAnswer(),
+                log.getCorrect(),
+                log.getCreateDate(),
+                log.getWinPoints(),
+                true
+            );
+        } else {
+            return new StudentAnswerLogResponseDTO(
+                null,
+                studentId,
+                questionId,
+                null,
+                null,
+                null,
+                null,
+                false
+            );
+        }
     }
 }

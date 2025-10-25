@@ -1,9 +1,11 @@
 package com.turling.web.rest;
 
+import com.turling.security.SecurityUtils;
 import com.turling.service.StudentAnswerLogQueryService;
 import com.turling.service.StudentAnswerLogService;
 import com.turling.service.criteria.StudentAnswerLogCriteria;
 import com.turling.service.dto.StudentAnswerLogDTO;
+import com.turling.service.dto.StudentAnswerLogResponseDTO;
 import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
@@ -80,5 +82,22 @@ public class StudentAnswerLogResource {
         LOG.debug("REST request to get StudentAnswerLog : {}", id);
         Optional<StudentAnswerLogDTO> studentAnswerLogDTO = studentAnswerLogService.findOne(id);
         return ResponseUtil.wrapOrNotFound(studentAnswerLogDTO);
+    }
+
+    /**
+     * {@code GET  /student-answer-logs/by-question/:questionId} : get student answer log by question id.
+     *
+     * @param questionId the question id.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the studentAnswerLogResponseDTO.
+     */
+    @GetMapping("/by-question/{questionId}")
+    public ResponseEntity<StudentAnswerLogResponseDTO> getStudentAnswerLogByQuestionId(@PathVariable("questionId") Long questionId) {
+        LOG.debug("REST request to get StudentAnswerLog by questionId : {}", questionId);
+        
+        // Get current user ID from JWT token
+        Long studentId = SecurityUtils.getCurrentUserId().orElseThrow(() -> new IllegalStateException("Current user not found"));
+        
+        StudentAnswerLogResponseDTO response = studentAnswerLogService.findByStudentIdAndQuestionId(studentId, questionId);
+        return ResponseEntity.ok(response);
     }
 }

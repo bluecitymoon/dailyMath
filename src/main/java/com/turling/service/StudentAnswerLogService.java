@@ -1,6 +1,7 @@
 package com.turling.service;
 
 import com.turling.service.dto.StudentAnswerLogDTO;
+import com.turling.service.dto.StudentAnswerLogResponseDTO;
 import java.util.Optional;
 
 /**
@@ -45,4 +46,13 @@ public interface StudentAnswerLogService {
      * @param id the id of the entity.
      */
     void delete(Long id);
+
+    /**
+     * Find student answer log by student id and question id.
+     *
+     * @param studentId the student id.
+     * @param questionId the question id.
+     * @return the response DTO with isAnswered flag.
+     */
+    StudentAnswerLogResponseDTO findByStudentIdAndQuestionId(Long studentId, Long questionId);
 }
