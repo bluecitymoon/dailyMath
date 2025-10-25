@@ -3,13 +3,14 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Table } from 'reactstrap';
 import { JhiItemCount, JhiPagination, TextFormat, getPaginationState } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSort, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
+import { faSort, faSortDown, faSortUp, faUser } from '@fortawesome/free-solid-svg-icons';
 import { APP_DATE_FORMAT } from 'app/config/constants';
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
 import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntities } from './student-answer-log.reducer';
+import StudentDetailModal from '../student/student-detail-modal';
 
 export const StudentAnswerLog = () => {
   const dispatch = useAppDispatch();
@@ -20,6 +21,10 @@ export const StudentAnswerLog = () => {
   const [paginationState, setPaginationState] = useState(
     overridePaginationStateWithQueryParams(getPaginationState(pageLocation, ITEMS_PER_PAGE, 'id'), pageLocation.search),
   );
+
+  // Modal state
+  const [isStudentModalOpen, setIsStudentModalOpen] = useState(false);
+  const [selectedStudentId, setSelectedStudentId] = useState<number | null>(null);
 
   const studentAnswerLogList = useAppSelector(state => state.studentAnswerLog.entities);
   const loading = useAppSelector(state => state.studentAnswerLog.loading);
@@ -80,6 +85,18 @@ export const StudentAnswerLog = () => {
     sortEntities();
   };
 
+  const handleStudentClick = (studentId: number) => {
+    setSelectedStudentId(studentId);
+    setIsStudentModalOpen(true);
+  };
+
+  const toggleStudentModal = () => {
+    setIsStudentModalOpen(!isStudentModalOpen);
+    if (isStudentModalOpen) {
+      setSelectedStudentId(null);
+    }
+  };
+
   const getSortIconByFieldName = (fieldName: string) => {
     const sortFieldName = paginationState.sort;
     const order = paginationState.order;
@@ -136,7 +153,18 @@ export const StudentAnswerLog = () => {
                       {studentAnswerLog.id}
                     </Button>
                   </td>
-                  <td>{studentAnswerLog.studentId}</td>
+                  <td>
+                    <Button
+                      color="link"
+                      size="sm"
+                      onClick={() => handleStudentClick(studentAnswerLog.studentId)}
+                      className="p-0 text-decoration-none"
+                      style={{ color: '#007bff', cursor: 'pointer' }}
+                    >
+                      <FontAwesomeIcon icon={faUser} className="me-1" />
+                      {studentAnswerLog.studentId}
+                    </Button>
+                  </td>
                   <td>{studentAnswerLog.questionId}</td>
                   <td>{studentAnswerLog.answer}</td>
                   <td>{studentAnswerLog.correct}</td>
@@ -185,6 +213,9 @@ export const StudentAnswerLog = () => {
       ) : (
         ''
       )}
+
+      {/* Student Detail Modal */}
+      <StudentDetailModal isOpen={isStudentModalOpen} toggle={toggleStudentModal} studentId={selectedStudentId} />
     </div>
   );
 };
