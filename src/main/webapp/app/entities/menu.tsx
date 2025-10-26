@@ -31,9 +31,9 @@ const EntitiesMenu = () => {
       <Fa6MenuItem icon={FaAsterisk} to="/student-answer-log">
         答题记录
       </Fa6MenuItem>
-      <MenuItem icon="asterisk" to="/student-section-log">
+      <Fa6MenuItem icon={FaAsterisk} to="/student-section-log">
         Student Section Log
-      </MenuItem>
+      </Fa6MenuItem>
       {/* jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here */}
     </>
   );
