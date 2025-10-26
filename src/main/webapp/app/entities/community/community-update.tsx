@@ -102,13 +102,7 @@ export const CommunityUpdate = () => {
               <ValidatedField label="名称" id="community-name" name="name" data-cy="name" type="text" />
               <ValidatedField label="纬度" id="community-lat" name="lat" data-cy="lat" type="text" />
               <ValidatedField label="经度" id="community-lon" name="lon" data-cy="lon" type="text" />
-              <ValidatedField
-                label="学生数"
-                id="community-studentsCount"
-                name="studentsCount"
-                data-cy="studentsCount"
-                type="text"
-              />
+              <ValidatedField label="学生数" id="community-studentsCount" name="studentsCount" data-cy="studentsCount" type="text" />
               <ValidatedField
                 label="创建日期"
                 id="community-createDate"

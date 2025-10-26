@@ -30,6 +30,7 @@
     <include file="config/liquibase/changelog/20250924000000_add_display_order_to_question_section_group.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20251013015210_added_entity_StudentAnswerLog.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20251014000000_add_wechat_fields_to_student.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20251026085950_added_entity_StudentSectionLog.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20250831035411_added_entity_constraints_QuestionOption.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250831040235_added_entity_constraints_Question.xml" relativeToChangelogFile="false"/>

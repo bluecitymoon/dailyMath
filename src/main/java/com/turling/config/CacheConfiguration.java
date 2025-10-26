@@ -55,6 +55,7 @@ public class CacheConfiguration {
             createCache(cm, com.turling.domain.QuestionBaseGroup.class.getName());
             createCache(cm, com.turling.domain.QuestionSectionGroup.class.getName());
             createCache(cm, com.turling.domain.StudentAnswerLog.class.getName());
+            createCache(cm, com.turling.domain.StudentSectionLog.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

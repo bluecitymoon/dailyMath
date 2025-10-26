@@ -10,6 +10,7 @@ import student from 'app/entities/student/student.reducer';
 import questionBaseGroup from 'app/entities/question-base-group/question-base-group.reducer';
 import questionSectionGroup from 'app/entities/question-section-group/question-section-group.reducer';
 import studentAnswerLog from 'app/entities/student-answer-log/student-answer-log.reducer';
+import studentSectionLog from 'app/entities/student-section-log/student-section-log.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const entitiesReducers = {
@@ -25,6 +26,7 @@ const entitiesReducers = {
   questionBaseGroup,
   questionSectionGroup,
   studentAnswerLog,
+  studentSectionLog,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
 };
 

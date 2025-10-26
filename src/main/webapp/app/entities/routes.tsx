@@ -15,6 +15,7 @@ import Student from './student';
 import QuestionBaseGroup from './question-base-group';
 import QuestionSectionGroup from './question-section-group';
 import StudentAnswerLog from './student-answer-log';
+import StudentSectionLog from './student-section-log';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 export default () => {
@@ -34,6 +35,7 @@ export default () => {
         <Route path="question-base-group/*" element={<QuestionBaseGroup />} />
         <Route path="question-section-group/*" element={<QuestionSectionGroup />} />
         <Route path="student-answer-log/*" element={<StudentAnswerLog />} />
+        <Route path="student-section-log/*" element={<StudentSectionLog />} />
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
       </ErrorBoundaryRoutes>
     </div>

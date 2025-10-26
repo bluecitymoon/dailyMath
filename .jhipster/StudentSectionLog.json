@@ -1,0 +1,43 @@
+{
+  "annotations": {
+    "changelogDate": "20251026085950"
+  },
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "studentId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sectionId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "totalCount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "finishedCount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "correctRate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "createDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updateDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "StudentSectionLog",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
